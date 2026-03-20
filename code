@@ -35,15 +35,14 @@ print("灰度图已保存为: gray_test.jpg")
 
 # NumPy操作
 # 1.输出某个像素值
-pixel_value = img[100, 100] # 输出坐标 (1000, 100)像素值
-print(f"像素 (100, 100) 的 BGR 值: {pixel_value}")
+pixel_value = img[1000, 100] # 输出坐标 (1000, 100)像素值
+print(f"像素 (1000, 100) 的 BGR 值: {pixel_value}")
 
-# 2. 裁剪区域并保存
-cropped_img = img_rgb[150:1300, 900:1700]
+# 2. 裁剪区域、保存并显示
+cropped_img = img[150:1300, 900:1700]
 cv2.imwrite("cropped_test.jpg", cropped_img)
 print(f"裁剪后的图像已保存为: cropped_test.jpg")
-
-
+cropped_img = cv2.cvtColor(cropped_img, cv2.COLOR_BGR2RGB)
 plt.figure("cropped Image")
 plt.imshow(cropped_img)
 plt.axis("off") 
